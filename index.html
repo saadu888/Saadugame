@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess the Number</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f3f4f6;
+      padding: 50px;
+    }
+    h1 {
+      color: #4f46e5;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #4f46e5;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    p {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎮 Guess the Number (1 - 20)</h1>
+  <input type="number" id="guess" placeholder="Shigar da lamba">
+  <button onclick="checkGuess()">Gwada</button>
+  <p id="message"></p>
+
+  <script>
+    let secretNumber = Math.floor(Math.random() * 20) + 1;
+
+    function checkGuess() {
+      let guess = document.getElementById("guess").value;
+      let message = document.getElementById("message");
+
+      if (guess == secretNumber) {
+        message.innerHTML = "✅ Daidai! Ka ci nasara!";
+      } else if (guess > secretNumber) {
+        message.innerHTML = "⬇️ Lambar tana ƙasa da wannan!";
+      } else {
+        message.innerHTML = "⬆️ Lambar tana sama da wannan!";
+      }
+    }
+  </script>
+</body>
+</html>
